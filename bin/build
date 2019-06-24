@@ -1,0 +1,2 @@
+#!/bin/bash
+docker build -t doubleswirve/alpine_v:$(git describe --tags --abbrev=0) .
