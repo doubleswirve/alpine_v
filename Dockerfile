@@ -1,6 +1,8 @@
 FROM alpine:3.10.0
 
-RUN apk --no-cache add git
+RUN apk --no-cache add \
+	git \
+	make
 
 # https://github.com/vlang/v#installing-v-from-source
 RUN mkdir $HOME/code
