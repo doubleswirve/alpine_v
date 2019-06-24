@@ -13,4 +13,4 @@ RUN mkdir $HOME/code
 WORKDIR $HOME/code
 RUN git clone https://github.com/vlang/v
 WORKDIR $HOME/code/v/compiler
-RUN make
+RUN clang -lexecinfo -w -o vc v.c

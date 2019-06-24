@@ -1,2 +1,4 @@
 #!/bin/bash
-docker build -t doubleswirve/alpine_v:$(git describe --tags --abbrev=0) .
+tag=doubleswirve/alpine_v:$(git describe --tags --abbrev=0)
+echo "building ${tag}"
+docker build -t ${tag} .
