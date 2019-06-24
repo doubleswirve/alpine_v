@@ -4,6 +4,7 @@ RUN apk --no-cache add \
 	build-base \
 	gcc \
 	git \
+	libexecinfo \
 	make
 
 # https://github.com/vlang/v#installing-v-from-source
