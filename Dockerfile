@@ -9,8 +9,7 @@ RUN apk --no-cache add \
 	make
 
 # https://github.com/vlang/v#installing-v-from-source
-RUN mkdir $HOME/code
-WORKDIR $HOME/code
+WORKDIR /code
 RUN git clone https://github.com/vlang/v
-WORKDIR $HOME/code/v/compiler
-RUN clang -lexecinfo -w -o vc v.c
+WORKDIR /code/v/compiler 
+RUN make
