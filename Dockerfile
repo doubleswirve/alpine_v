@@ -13,3 +13,4 @@ WORKDIR /code
 RUN git clone https://github.com/vlang/v
 WORKDIR /code/v/compiler 
 RUN make
+RUN ln -s /code/v/compiler/v /usr/local/bin/v
