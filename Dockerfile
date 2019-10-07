@@ -1,16 +1,16 @@
-FROM alpine:3.10.0
+FROM alpine:3.10.2
 
 RUN apk --no-cache add \
-	build-base \
+	musl-dev \
 	gcc \
 	git \
-	libcurl \
+	openssl-dev \
 	libexecinfo-dev \
 	make
 
 # https://github.com/vlang/v#installing-v-from-source
-WORKDIR /code
-RUN git clone https://github.com/vlang/v
-WORKDIR /code/v/compiler 
+RUN mkdir -p /code/v
+WORKDIR /code/v
+RUN git clone --depth 1 --quiet https://github.com/vlang/v .
 RUN make
-RUN ln -s /code/v/compiler/v /usr/local/bin/v
+RUN ln -s /code/v/v /usr/local/bin/v
